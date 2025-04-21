@@ -50,9 +50,15 @@
     combos {
         compatible = "zmk,combos";
 
-        jk {
+        jk_esc {
             bindings = <&kp ESCAPE>;
             key-positions = <31 32>;
+            layers = <0>;
+        };
+
+        dt_dab {
+            bindings = <&kp TAB>;
+            key-positions = <27 26>;
             layers = <0>;
         };
     };
