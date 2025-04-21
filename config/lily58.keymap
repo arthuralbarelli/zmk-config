@@ -42,7 +42,7 @@
 
         jk_esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <31 32>;
+            key-positions = <32 33>;
             layers = <0>;
         };
 
