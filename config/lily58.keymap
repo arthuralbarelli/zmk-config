@@ -92,11 +92,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans        &trans          &trans            &trans             &trans        &trans                                 &trans  &trans        &trans          &trans           &trans                &trans
-&kp EXCL      &kp AT_SIGN     &kp HASH          &kp DOLLAR         &kp PERCENT   &trans                                 &trans  &kp CARET     &kp AMPERSAND   &kp ASTRK        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp NUMBER_1  &kp NUMBER_2    &kp NUMBER_3      &kp NUMBER_4       &kp NUMBER_5  &trans                                 &trans  &kp NUMBER_6  &kp NUMBER_7    &kp NUMBER_8     &kp NUMBER_9          &kp NUMBER_0
-&kp TILDE     &kp UNDERSCORE  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp EQUAL     &trans  &trans          &trans         &trans  &kp PLUS      &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp MINUS             &kp GRAVE
-                                                &trans             &trans        &to 0   &kp LEFT_ALT    &kp RIGHT_GUI  &to 3   &trans        &trans
+&trans        &trans                     &trans                     &trans                      &trans        &trans                                 &trans  &trans        &trans                    &trans                     &trans                &trans
+&kp EXCL      &kp AT_SIGN                &kp HASH                   &kp DOLLAR                  &kp PERCENT   &trans                                 &trans  &kp CARET     &kp AMPERSAND             &kp ASTRK                  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp NUMBER_1  &mt LEFT_CONTROL NUMBER_2  &mt LEFT_ALT NUMBER_3      &mt LEFT_SHIFT NUMBER_4     &kp NUMBER_5  &trans                                 &trans  &kp NUMBER_6  &mt NUMBER_7 RIGHT_SHIFT  &mt RIGHT_ALT NUMBER_8     &mt RCTRL NUMBER_9    &kp NUMBER_0
+&kp TILDE     &mt LEFT_GUI UNDER         &mt LEFT_GUI LEFT_BRACKET  &mt LEFT_GUI RIGHT_BRACKET  &kp EQUAL     &trans  &trans          &trans         &trans  &kp PLUS      &mt RIGHT_GUI LEFT_BRACE  &mt RIGHT_GUI RIGHT_BRACE  &mt RIGHT_GUI MINUS   &kp GRAVE
+                                                                    &trans                      &trans        &to 0   &kp LEFT_ALT    &kp RIGHT_GUI  &to 3   &trans        &trans
             >;
         };
 
