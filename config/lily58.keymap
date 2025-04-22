@@ -51,6 +51,16 @@
             key-positions = <27 26>;
             layers = <0>;
         };
+
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <33 34>;
+        };
+
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <21 22>;
+        };
     };
 
     keymap {
