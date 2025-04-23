@@ -105,7 +105,7 @@
             bindings = <
 &trans        &trans                     &trans                     &trans                      &trans        &trans                    &trans  &trans        &trans                    &trans                     &trans                &trans
 &kp EXCL      &kp AT_SIGN                &kp HASH                   &kp DOLLAR                  &kp PERCENT   &trans                    &trans  &kp CARET     &kp AMPERSAND             &kp ASTRK                  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp NUMBER_1  &hm LEFT_CONTROL NUMBER_2  &hm LEFT_ALT NUMBER_3      &hm LEFT_SHIFT NUMBER_4     &kp NUMBER_5  &trans                    &trans  &kp NUMBER_6  &hm NUMBER_7 RIGHT_SHIFT  &hm RIGHT_ALT NUMBER_8     &hm RCTRL NUMBER_9    &kp NUMBER_0
+&kp NUMBER_1  &hm LEFT_CONTROL NUMBER_2  &hm LEFT_ALT NUMBER_3      &hm LEFT_SHIFT NUMBER_4     &kp NUMBER_5  &trans                    &trans  &kp NUMBER_6  &hm RSHIFT NUMBER_7       &hm RIGHT_ALT NUMBER_8     &hm RCTRL NUMBER_9    &kp NUMBER_0
 &kp TILDE     &hm LEFT_GUI UNDER         &hm LEFT_GUI LEFT_BRACKET  &hm LEFT_GUI RIGHT_BRACKET  &kp EQUAL     &trans  &trans    &trans  &trans  &kp PLUS      &hm RIGHT_GUI LEFT_BRACE  &hm RIGHT_GUI RIGHT_BRACE  &hm RIGHT_GUI MINUS   &kp GRAVE
                                                                     &trans                      &trans        &to 0   &trans    &trans  &to 3   &trans        &trans
             >;
