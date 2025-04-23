@@ -19,6 +19,15 @@
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
         };
+
+        caps_word_hold: caps_word_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CAPS_WORD_HOLD";
+            bindings = <&kp>, <&caps_word>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     macros {
@@ -77,11 +86,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&none  &none               &none           &none             &none  &none                                     &none  &none  &none              &none                &none                 &none
-&kp Q  &kp W               &kp E           &kp R             &kp T  &none                                     &none  &kp Y  &kp U              &kp I                &kp O                 &kp P
-&kp A  &hm LEFT_CONTROL S  &hm LEFT_ALT D  &hm LEFT_SHIFT F  &kp G  &none                                     &none  &kp H  &hm RIGHT_SHIFT J  &hm RIGHT_ALT K      &hm RCTRL L           &kp COLON
-&kp Z  &hm LEFT_GUI X      &hm LEFT_GUI C  &hm LEFT_GUI V    &kp B  &none        &none             &none      &none  &kp N  &hm RIGHT_GUI M    &hm RIGHT_GUI COMMA  &hm RIGHT_GUI PERIOD  &kp SLASH
-                                           &none             &none  &lt 2 SPACE  &kp LEFT_SHIFT    &kp RCTRL  &to 1  &none  &none
+&none  &none               &none           &none             &none        &none                        &none  &none                       &none              &none                &none                 &none
+&kp Q  &kp W               &kp E           &kp R             &kp T        &none                        &none  &kp Y                       &kp U              &kp I                &kp O                 &kp P
+&kp A  &hm LEFT_CONTROL S  &hm LEFT_ALT D  &hm LEFT_SHIFT F  &kp G        &none                        &none  &kp H                       &hm RIGHT_SHIFT J  &hm RIGHT_ALT K      &hm RCTRL L           &kp COLON
+&kp Z  &hm LEFT_GUI X      &hm LEFT_GUI C  &hm LEFT_GUI V    &kp B        &none        &none    &none  &none  &kp N                       &hm RIGHT_GUI M    &hm RIGHT_GUI COMMA  &hm RIGHT_GUI PERIOD  &kp SLASH
+                                           &none             &key_repeat  &lt 2 SPACE  &none    &none  &to 1  &caps_word_hold CAPSLOCK 0  &none
             >;
         };
 
@@ -94,21 +103,21 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&trans        &trans                     &trans                     &trans                      &trans        &trans                                 &trans  &trans        &trans                    &trans                     &trans                &trans
-&kp EXCL      &kp AT_SIGN                &kp HASH                   &kp DOLLAR                  &kp PERCENT   &trans                                 &trans  &kp CARET     &kp AMPERSAND             &kp ASTRK                  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
-&kp NUMBER_1  &hm LEFT_CONTROL NUMBER_2  &hm LEFT_ALT NUMBER_3      &hm LEFT_SHIFT NUMBER_4     &kp NUMBER_5  &trans                                 &trans  &kp NUMBER_6  &hm NUMBER_7 RIGHT_SHIFT  &hm RIGHT_ALT NUMBER_8     &hm RCTRL NUMBER_9    &kp NUMBER_0
-&kp TILDE     &hm LEFT_GUI UNDER         &hm LEFT_GUI LEFT_BRACKET  &hm LEFT_GUI RIGHT_BRACKET  &kp EQUAL     &trans  &trans          &trans         &trans  &kp PLUS      &hm RIGHT_GUI LEFT_BRACE  &hm RIGHT_GUI RIGHT_BRACE  &hm RIGHT_GUI MINUS   &kp GRAVE
-                                                                    &trans                      &trans        &to 0   &kp LEFT_ALT    &kp RIGHT_GUI  &to 3   &trans        &trans
+&trans        &trans                     &trans                     &trans                      &trans        &trans                    &trans  &trans        &trans                    &trans                     &trans                &trans
+&kp EXCL      &kp AT_SIGN                &kp HASH                   &kp DOLLAR                  &kp PERCENT   &trans                    &trans  &kp CARET     &kp AMPERSAND             &kp ASTRK                  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp NUMBER_1  &hm LEFT_CONTROL NUMBER_2  &hm LEFT_ALT NUMBER_3      &hm LEFT_SHIFT NUMBER_4     &kp NUMBER_5  &trans                    &trans  &kp NUMBER_6  &hm NUMBER_7 RIGHT_SHIFT  &hm RIGHT_ALT NUMBER_8     &hm RCTRL NUMBER_9    &kp NUMBER_0
+&kp TILDE     &hm LEFT_GUI UNDER         &hm LEFT_GUI LEFT_BRACKET  &hm LEFT_GUI RIGHT_BRACKET  &kp EQUAL     &trans  &trans    &trans  &trans  &kp PLUS      &hm RIGHT_GUI LEFT_BRACE  &hm RIGHT_GUI RIGHT_BRACE  &hm RIGHT_GUI MINUS   &kp GRAVE
+                                                                    &trans                      &trans        &to 0   &trans    &trans  &to 3   &trans        &trans
             >;
         };
 
         nav {
             bindings = <
-&trans  &trans  &trans         &trans     &trans  &trans                                 &trans  &trans    &trans                  &trans             &trans     &trans
-&none   &none   &none          &none      &none   &trans                                 &trans  &none     &kp RG(RA(LEFT_ARROW))  &kp RG(RA(RIGHT))  &none      &none
-&trans  &none   &kp BACKSPACE  &kp ENTER  &none   &trans                                 &trans  &kp LEFT  &kp DOWN_ARROW          &kp UP_ARROW       &kp RIGHT  &none
-&trans  &none   &kp LG(C)      &kp LG(V)  &none   &trans  &trans          &trans         &trans  &none     &none                   &none              &none      &to 4
-                               &trans     &trans  &trans  &kp LEFT_ALT    &kp RIGHT_GUI  &to 1   &trans    &trans
+&trans  &trans  &trans         &trans     &trans  &trans                    &trans  &trans    &trans                  &trans             &trans     &trans
+&none   &none   &none          &none      &none   &trans                    &trans  &none     &kp RG(RA(LEFT_ARROW))  &kp RG(RA(RIGHT))  &none      &none
+&trans  &none   &kp BACKSPACE  &kp ENTER  &none   &trans                    &trans  &kp LEFT  &kp DOWN_ARROW          &kp UP_ARROW       &kp RIGHT  &none
+&trans  &none   &kp LG(C)      &kp LG(V)  &none   &trans  &trans    &trans  &trans  &none     &none                   &none              &none      &to 4
+                               &trans     &trans  &to 0   &trans    &trans  &to 1   &trans    &trans
             >;
         };
 
@@ -125,9 +134,9 @@
         bluetooth {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans      &trans      &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans      &trans      &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans      &trans      &trans  &bt BT_CLR_ALL
 &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &bt BT_PRV  &bt BT_NXT  &trans  &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans      &trans      &trans  &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans      &trans      &trans  &trans
                         &trans  &trans  &to 0   &trans    &trans  &trans  &trans  &trans
             >;
         };
